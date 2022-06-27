@@ -6,7 +6,7 @@ import pickle
 
 
 def data():
-    url = "https://raw.githubusercontent.com/Biswajit7890/Data-Storage/main/cars.json"
+    url = "https://raw.githubusercontent.com/Biswajit7890/Transformation-of-data/master/dataset/df_termdeposit_details.json"
     dict_list = data_handler(url)
     with open("parrot.pkl", "wb") as f:
         pickle.dump(dict_list, f)

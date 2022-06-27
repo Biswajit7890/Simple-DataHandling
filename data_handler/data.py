@@ -24,12 +24,11 @@ def data_handler(infile):
     try:
         resp = requests.get(infile)
         data = json.loads(resp.text)
-        for i in range(len(data)):
-            for a, b in data[i].items():
-                data_set = {"key": a, "val": b}
-                data_list.append(data_set)
+        for a, b in data["data"]:
+            print(a, ".......", b)
+            data_set = {"Applicant_id": b, "TermDepositStatus": a}
+            data_list.append(data_set)
         raise NotImplementedError
     except Exception as e:
         logger.error(e)
     return data_list
-
